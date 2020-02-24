@@ -1,9 +1,7 @@
-package main.com.farhanarnob;
+package com.farhanarnob;
 
 import java.util.Scanner;
 
-import static main.com.farhanarnob.Anagrams.anagrams;
-import static main.com.farhanarnob.Validator.isValidString;
 
 public class Main {
 
@@ -12,12 +10,14 @@ public class Main {
         System.out.println("Enter first word below (press enter to exit)");
         String firstWord, secondWord;
 
-        while (isValidString(firstWord = scanner.nextLine())) {
-            if (isValidString(secondWord = scanner.nextLine())) {
-                if (anagrams(firstWord, secondWord))
+        while (Validator.isValidString(firstWord = scanner.nextLine())) {
+            System.out.print("Second word:");
+            if (Validator.isValidString(secondWord = scanner.nextLine())) {
+                if (Anagrams.isAnagrams(firstWord, secondWord))
                     System.out.println("\"" + firstWord + "\" & \"" + secondWord + "\" are anagrams");
                 else System.out.println("\"" + firstWord + "\" & \"" + secondWord + "\" are not anagrams");
             } else System.out.println("second word is invalid");
+            System.out.println("Enter first word below (press enter to exit)");
         }
     }
 

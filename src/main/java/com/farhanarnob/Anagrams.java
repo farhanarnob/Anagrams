@@ -1,13 +1,13 @@
-package main.com.farhanarnob;
-
-import com.sun.istack.internal.NotNull;
+package com.farhanarnob;
 
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
+import static com.farhanarnob.Validator.isValidString;
+
 
 public class Anagrams {
-    private static String canonicalize(@NotNull String str) {
+    private static String canonicalize(String str) {
         return Stream.of(str
                 .trim()
                 .toLowerCase()
@@ -17,9 +17,9 @@ public class Anagrams {
                 .trim();
     }
 
-    public static boolean anagrams(@NotNull String firstString,
-                                   @NotNull String secondString) {
-        if (Validator.isValidString(firstString) && Validator.isValidString(secondString))
+    public static boolean isAnagrams(String firstString,
+                                     String secondString) {
+        if (isValidString(firstString) && isValidString(secondString))
             return canonicalize(firstString).equals(canonicalize(secondString));
         return false;
     }

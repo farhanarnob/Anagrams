@@ -1,6 +1,5 @@
-package test.com.farhanarnob;
+package com.farhanarnob;
 
-import main.com.farhanarnob.Anagrams;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -11,7 +10,7 @@ class AnagramsTest {
         String firstString = null;
         String secondString = null;
 
-        Assertions.assertFalse(Anagrams.anagrams(firstString,secondString),
+        Assertions.assertFalse(Anagrams.isAnagrams(null,null),
                 firstString + " & " + secondString + " are null, so the result must be false.");
     }
 
@@ -20,7 +19,7 @@ class AnagramsTest {
         String firstString = "Hajmola";
         String secondString = "Hajmi";
 
-        Assertions.assertFalse(Anagrams.anagrams(firstString,secondString),
+        Assertions.assertFalse(Anagrams.isAnagrams(firstString,secondString),
                 firstString + " & " + secondString + " must not be anagrams");
     }
 
@@ -29,7 +28,7 @@ class AnagramsTest {
         String firstString = "Astronomer";
         String secondString = "Moon starer";
 
-        Assertions.assertTrue(Anagrams.anagrams(firstString,secondString),
+        Assertions.assertTrue(Anagrams.isAnagrams(firstString,secondString),
                 firstString + " & " + secondString + " must be anagrams");
     }
 }

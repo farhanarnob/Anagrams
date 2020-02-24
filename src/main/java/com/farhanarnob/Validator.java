@@ -1,8 +1,8 @@
-package main.com.farhanarnob;
+package com.farhanarnob;
 
 
 public class Validator {
     public static boolean isValidString(String str) {
-        return str != null && str.length() > 0;
+        return str != null && str.trim().length() > 0;
     }
 }
